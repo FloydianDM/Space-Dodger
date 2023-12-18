@@ -929,6 +929,12 @@ PrefabInstance:
       propertyPath: forceRange.y
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6168424223480645084, guid: cd31466c50a284d89b6b196624e70ada,
+        type: 3}
+      propertyPath: powerUpPrefab
+      value: 
+      objectReference: {fileID: 1615215689136756072, guid: 46f4e8508de2d46a28f1908b2a12fe1a,
+        type: 3}
     - target: {fileID: 7004620643945752478, guid: cd31466c50a284d89b6b196624e70ada,
         type: 3}
       propertyPath: m_Name

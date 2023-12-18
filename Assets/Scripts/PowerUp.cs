@@ -17,6 +17,8 @@ namespace SpaceDodger
             {
                 Destroy(asteroid);
             }
+
+            Destroy(gameObject);
         }
     }    
 }

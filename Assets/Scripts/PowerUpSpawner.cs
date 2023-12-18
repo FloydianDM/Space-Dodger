@@ -65,10 +65,9 @@ namespace SpaceDodger
                     break;
             }
 
-            Vector2 worldSpawnPoint = _mainCamera.ViewportToScreenPoint(spawnPoint);
+            Vector2 worldSpawnPoint = _mainCamera.ViewportToWorldPoint(spawnPoint);
             GameObject powerUpInstance = Instantiate(powerUpPrefab, worldSpawnPoint, 
                 Quaternion.Euler(0f, 0f, Random.Range(0,360f)));
-            Debug.Log("Power-up Spawned");
             Rigidbody powerUpRb = powerUpInstance.GetComponent<Rigidbody>();
             
             powerUpRb.velocity = travelDirection.normalized * Random.Range(forceRange.x, forceRange.y);
