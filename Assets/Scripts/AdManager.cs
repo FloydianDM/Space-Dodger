@@ -41,7 +41,7 @@ namespace SpaceDodger
         {
     #if UNITY_IOS
             _gameId = iOSGameId;
-            _adUnitId = iOSAdUnitAd;
+            _adUnitId = iOSAdUnitId;
     #elif UNITY_ANDROID
             _gameId = androidGameId;
             _adUnitId = androidAdUnitId;
