@@ -21,7 +21,7 @@ namespace SpaceDodger
 
         private void Update()
         {
-            ProcessTouchInput();
+            ProcessInput();
             KeepShipOnScreen();
             RotateShip();
         }
@@ -31,12 +31,21 @@ namespace SpaceDodger
             MoveShip();
         }
 
-        private void ProcessTouchInput()
+        private void ProcessInput()
         {
             if (Touchscreen.current.primaryTouch.press.isPressed)
             {
                 Vector2 touchPosition = Touchscreen.current.primaryTouch.position.ReadValue();
                 Vector3 worldPosition = _mainCamera.ScreenToWorldPoint(touchPosition);
+
+                _movementDirection = worldPosition - transform.position;
+                _movementDirection.z = 0f;
+                _movementDirection.Normalize();
+            }
+            else if (Mouse.current.leftButton.isPressed)
+            {
+                Vector2 clickPosition = Mouse.current.position.ReadValue();
+                Vector3 worldPosition = _mainCamera.ScreenToWorldPoint(clickPosition);
 
                 _movementDirection = worldPosition - transform.position;
                 _movementDirection.z = 0f;
@@ -68,7 +77,6 @@ namespace SpaceDodger
             {
                 newPosition.x = -newPosition.x + 0.1f;
             }
-            
             else if (viewportPosition.x < 0)
             {
                 newPosition.x = -newPosition.x - 0.1f;
@@ -78,7 +86,6 @@ namespace SpaceDodger
             {
                 newPosition.y = -newPosition.y + 0.1f;
             }
-            
             else if (viewportPosition.y < 0)
             {
                 newPosition.y = -newPosition.y - 0.1f;
