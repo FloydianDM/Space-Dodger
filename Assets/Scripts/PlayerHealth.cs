@@ -4,8 +4,12 @@ namespace SpaceDodger
 {
     public class PlayerHealth : MonoBehaviour
     {
+
         public void ProcessCrash()
         {
+            AudioPlayer audioPlayer = FindObjectOfType<AudioPlayer>();
+            audioPlayer.PlayDeathSFX();
+
             AsteroidSpawner asteroidSpawner = FindObjectOfType<AsteroidSpawner>();
             asteroidSpawner.enabled = false;
 
