@@ -11,6 +11,9 @@ namespace SpaceDodger
                 return;
             }
 
+            UIController uiController = FindObjectOfType<UIController>();
+            uiController.IsPowerUpPicked = true;
+
             GameObject[] asteroids = GameObject.FindGameObjectsWithTag("Asteroid");
 
             foreach (var asteroid in asteroids)
