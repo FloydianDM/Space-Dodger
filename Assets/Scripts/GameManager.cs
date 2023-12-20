@@ -6,7 +6,7 @@ namespace SpaceDodger
 {
     public class GameManager : MonoBehaviour
     {
-        [SerializeField] private GameObject player;
+        [SerializeField] private UnityEngine.GameObject player;
         [SerializeField] private Button continueButton;
 
         public void StartGame()

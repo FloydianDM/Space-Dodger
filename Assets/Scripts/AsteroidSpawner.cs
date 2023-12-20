@@ -4,7 +4,7 @@ namespace SpaceDodger
 {
     public class AsteroidSpawner : MonoBehaviour
     {
-        [SerializeField] private GameObject[] asteroidPrefabs;
+        [SerializeField] private UnityEngine.GameObject[] asteroidPrefabs;
         [SerializeField] private float timeBetweenSpawns = 2f;
         [SerializeField] private Vector2 forceRange;
 
@@ -65,8 +65,8 @@ namespace SpaceDodger
 
             Vector2 worldSpawnPoint = _mainCamera.ViewportToWorldPoint(spawnPoint);
 
-            GameObject randomAsteroid = asteroidPrefabs[Random.Range(0, asteroidPrefabs.Length)];
-            GameObject asteroidInstance = Instantiate(randomAsteroid, worldSpawnPoint, Quaternion.Euler(0f, 0f, Random.Range(0, 360f)));
+            UnityEngine.GameObject randomAsteroid = asteroidPrefabs[Random.Range(0, asteroidPrefabs.Length)];
+            UnityEngine.GameObject asteroidInstance = Instantiate(randomAsteroid, worldSpawnPoint, Quaternion.Euler(0f, 0f, Random.Range(0, 360f)));
             Rigidbody asteroidRb = asteroidInstance.GetComponent<Rigidbody>();
 
             asteroidRb.velocity = travelDirection.normalized * Random.Range(forceRange.x, forceRange.y);

@@ -256,7 +256,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.08664116, g: 0.09364989, b: 0.103773594, a: 0}
+  m_BackGroundColor: {r: 0.06666667, g: 0.019607844, b: 0.17254902, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -953,6 +953,23 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1615215689136756072, guid: 46f4e8508de2d46a28f1908b2a12fe1a,
         type: 3}
+    - target: {fileID: 6168424223480645084, guid: cd31466c50a284d89b6b196624e70ada,
+        type: 3}
+      propertyPath: powerUpPrefabs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6168424223480645084, guid: cd31466c50a284d89b6b196624e70ada,
+        type: 3}
+      propertyPath: powerUpPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 1615215689136756072, guid: 46f4e8508de2d46a28f1908b2a12fe1a,
+        type: 3}
+    - target: {fileID: 6168424223480645084, guid: cd31466c50a284d89b6b196624e70ada,
+        type: 3}
+      propertyPath: powerUpPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 1615215689136756072, guid: 84e88e565414f47838a8c340b2d09f29,
+        type: 3}
     - target: {fileID: 7004620643945752478, guid: cd31466c50a284d89b6b196624e70ada,
         type: 3}
       propertyPath: m_Name
@@ -1503,6 +1520,7 @@ SceneRoots:
   - {fileID: 8812519659714280554}
   - {fileID: 2104308020}
   - {fileID: 5627582661029205908}
+  - {fileID: 5758181845194558254}
   - {fileID: 1683176424024055975}
   - {fileID: 2575197592565154461}
   - {fileID: 4763492305086284593}
@@ -1510,5 +1528,4 @@ SceneRoots:
   - {fileID: 285507130697226218}
   - {fileID: 6316906029418196657}
   - {fileID: 1218226380}
-  - {fileID: 5758181845194558254}
   - {fileID: 5738978098624840213}

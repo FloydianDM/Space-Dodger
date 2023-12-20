@@ -6,9 +6,9 @@ namespace SpaceDodger
 {
     public class UIController : MonoBehaviour
     {
-        [SerializeField] private GameObject gameOverCanvas;
-        [SerializeField] private GameObject scoreCanvas;
-        [SerializeField] private GameObject powerUpCanvas;
+        [SerializeField] private UnityEngine.GameObject gameOverCanvas;
+        [SerializeField] private UnityEngine.GameObject scoreCanvas;
+        [SerializeField] private UnityEngine.GameObject powerUpCanvas;
         [SerializeField] private TextMeshProUGUI scoreText;
         [SerializeField] private TextMeshProUGUI lastScoreText;
         [SerializeField] private TextMeshProUGUI powerUpText;

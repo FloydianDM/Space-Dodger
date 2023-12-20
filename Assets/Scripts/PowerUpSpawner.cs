@@ -4,7 +4,7 @@ namespace SpaceDodger
 {
     public class PowerUpSpawner : MonoBehaviour
     {
-        [SerializeField] private GameObject powerUpPrefab;
+        [SerializeField] private GameObject[] powerUpPrefabs;
         [SerializeField] private int minSpawnTime;
         [SerializeField] private int maxSpawnTime;
         [SerializeField] private Vector2 forceRange;
@@ -64,6 +64,9 @@ namespace SpaceDodger
                     travelDirection += new Vector2(Random.Range(-1, 1), -1);
                     break;
             }
+
+            int powerUpIndex = Random.Range(0, powerUpPrefabs.Length);
+            GameObject powerUpPrefab = powerUpPrefabs[powerUpIndex];
 
             Vector2 worldSpawnPoint = _mainCamera.ViewportToWorldPoint(spawnPoint);
             GameObject powerUpInstance = Instantiate(powerUpPrefab, worldSpawnPoint, 
