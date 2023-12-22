@@ -4,6 +4,6 @@ namespace SpaceDodger
     {
         public void PlayEffects();
         public void PickedUp();
-
+        public void DestroyCollectible();
     }   
 }

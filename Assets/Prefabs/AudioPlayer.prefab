@@ -143,3 +143,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathSFX: {fileID: 8300000, guid: 46f26ebd05ae8469980dd450a026276e, type: 3}
   powerUpSFX: {fileID: 8300000, guid: 4ac1f93b948cd4f51b4e8c80ebfcbc3c, type: 3}
+  killSFX: {fileID: 8300000, guid: 606cb6d9e7db84471a14254f95c9be57, type: 3}

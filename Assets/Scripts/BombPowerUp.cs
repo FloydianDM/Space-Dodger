@@ -4,6 +4,13 @@ namespace SpaceDodger
 {
     public class BombPowerUp : PowerUps
     {
+        private string _typeText = "Bomb Power-Up!";
+
+        protected  override string ReturnPowerUpText()
+        {
+            return _typeText;
+        }
+
         protected override void ExecutePowerUpAction()
         {
             DestroyAsteroids();
@@ -18,7 +25,7 @@ namespace SpaceDodger
                 Destroy(asteroid);
             }
 
-            Destroy(gameObject);
+            isActionExecuted = true;
         }
     }    
 }

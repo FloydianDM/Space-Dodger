@@ -6,13 +6,14 @@ namespace SpaceDodger
 {
     public class UIController : MonoBehaviour
     {
-        [SerializeField] private UnityEngine.GameObject gameOverCanvas;
-        [SerializeField] private UnityEngine.GameObject scoreCanvas;
-        [SerializeField] private UnityEngine.GameObject powerUpCanvas;
+        [SerializeField] private GameObject gameOverCanvas;
+        [SerializeField] private GameObject scoreCanvas;
+        [SerializeField] private GameObject powerUpCanvas;
         [SerializeField] private TextMeshProUGUI scoreText;
         [SerializeField] private TextMeshProUGUI lastScoreText;
         [SerializeField] private TextMeshProUGUI powerUpText;
 
+        private string _powerUpTextString = "";
         private ScoreManager _scoreManager;
         public bool IsPowerUpPicked = false;
 
@@ -52,17 +53,24 @@ namespace SpaceDodger
             scoreCanvas.SetActive(true);
         }
 
+        public void WritePowerUpText(string typeText)
+        {
+            _powerUpTextString = typeText;   
+        }
+
         private IEnumerator TogglePowerUpCanvas()
         {
             IsPowerUpPicked = false;
 
             powerUpCanvas.SetActive(true);
-            powerUpText.text = "Asteroid Destroyer Picked Up!";
+
+            powerUpText.text = _powerUpTextString;
 
             yield return new WaitForSeconds(1);
 
             powerUpCanvas.SetActive(false);
         }
+
     }
 }
 

@@ -6,6 +6,7 @@ namespace SpaceDodger
     {
         [SerializeField] private AudioClip deathSFX;
         [SerializeField] private AudioClip powerUpSFX;
+        [SerializeField] private AudioClip killSFX;
 
         private AudioSource _audioSource;
 
@@ -27,6 +28,11 @@ namespace SpaceDodger
         public void PlayPowerUpSFX()
         {
             _audioSource.PlayOneShot(powerUpSFX);
+        }
+
+        public void PlayKillSFX()
+        {
+            _audioSource.PlayOneShot(killSFX);
         }
     }
     
