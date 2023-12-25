@@ -6,14 +6,14 @@ namespace SpaceDodger
     {
         private void OnTriggerEnter(Collider other) 
         {   
-            ComponentActivator componentActivator = FindObjectOfType<ComponentActivator>();            
+            ShieldActivator shieldActivator = FindObjectOfType<ShieldActivator>();            
             PlayerHealth playerHealth = FindObjectOfType<PlayerHealth>();
 
-            if (other.CompareTag("Player") && !componentActivator.IsShieldActive)
+            if (other.CompareTag("Player") && !shieldActivator.IsShieldActive)
             {
                 playerHealth.ProcessCrash();
             } 
-            else if (other.CompareTag("Player") && componentActivator.IsShieldActive)
+            else if (other.CompareTag("Player") && shieldActivator.IsShieldActive)
             {
                 DestroyAsteroid();
             }

@@ -9,6 +9,7 @@ namespace SpaceDodger
 
         private float _scoreFloat;
         public bool IsScoreStopped;
+        public event Action OnScoreChange;
 
         private void Update()
         {
@@ -24,8 +25,12 @@ namespace SpaceDodger
 
             _scoreFloat += Time.deltaTime * 10;
             Score = MathF.Floor(_scoreFloat);
-        }
 
+            if (OnScoreChange != null)
+            {
+                OnScoreChange();
+            }
+        }
     }
 }
 

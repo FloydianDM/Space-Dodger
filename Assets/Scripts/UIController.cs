@@ -22,12 +22,12 @@ namespace SpaceDodger
             gameOverCanvas.SetActive(false);
             powerUpCanvas.SetActive(false);
             _scoreManager = FindObjectOfType<ScoreManager>();
+
+            _scoreManager.OnScoreChange += DisplayScore;
         }
 
         private void Update()
         {
-            DisplayScore();
-
             if (IsPowerUpPicked)
             {
                 StartCoroutine(TogglePowerUpCanvas());

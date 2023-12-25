@@ -3,7 +3,7 @@ namespace SpaceDodger
     public interface ICollectable
     {
         public void PlayEffects();
-        public void PickedUp();
+        public void SendPickedUpText();
         public void DestroyCollectible();
     }   
 }

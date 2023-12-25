@@ -1,16 +1,12 @@
+using System;
 using UnityEngine;
 
 namespace SpaceDodger
 {
     public abstract class PowerUps : MonoBehaviour, ICollectable
     { 
-        protected bool isActionExecuted;
-
-        private void Update()
-        {
-            DestroyCollectible();
-        }
-
+        public event Action OnPickupPicked;
+        
         private void OnTriggerEnter(Collider other)
         {
             if (!other.CompareTag("Player"))
@@ -19,11 +15,11 @@ namespace SpaceDodger
             }
             
             PlayEffects();    
-            PickedUp();
+            SendPickedUpText();
             ExecutePowerUpAction();
         }
 
-        public void PickedUp()
+        public void SendPickedUpText()
         {
             UIController uiController = FindObjectOfType<UIController>();
             uiController.IsPowerUpPicked = true;
@@ -39,12 +35,14 @@ namespace SpaceDodger
         protected abstract void ExecutePowerUpAction();
         protected abstract string ReturnPowerUpText();
 
+        private void OnBecameInvisible() 
+        {
+            DestroyCollectible();    
+        }
+
         public void DestroyCollectible()
         {
-            if (isActionExecuted)
-            {
-                Destroy(gameObject);
-            }
+            Destroy(gameObject);
         }
     }
 }

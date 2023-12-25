@@ -14,6 +14,7 @@ namespace SpaceDodger
         protected override void ExecutePowerUpAction()
         {
             DestroyAsteroids();
+            DestroyCollectible();
         }
 
         private void DestroyAsteroids()
@@ -24,8 +25,6 @@ namespace SpaceDodger
             {
                 Destroy(asteroid);
             }
-
-            isActionExecuted = true;
         }
     }    
 }
