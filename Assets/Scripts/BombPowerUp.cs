@@ -2,9 +2,9 @@ using UnityEngine;
 
 namespace SpaceDodger
 {
-    public class BombPowerUp : PowerUps
+    public class BombPowerUp : PowerUp
     {
-        private string _typeText = "Bomb Power-Up!";
+        private readonly string _typeText = "Bomb Power-Up!";
 
         protected  override string ReturnPowerUpText()
         {

@@ -1,12 +1,8 @@
-using System;
-using System.Collections;
-using UnityEngine;
-
 namespace SpaceDodger
 {
-    public class ShieldPowerUp : PowerUps
+    public class ShieldPowerUp : PowerUp
     {
-        private string _typeText = "Shield Power-Up!";
+        private readonly string _typeText = "Shield Power-Up!";
         public bool IsShieldPowerUpPicked = false;
 
         protected override string ReturnPowerUpText()

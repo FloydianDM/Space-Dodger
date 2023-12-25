@@ -8,7 +8,8 @@ namespace SpaceDodger
         [SerializeField] private GameObject shield;
 
         private float _shieldActivationDuration = 8f;
-        public bool IsShieldActive = false;
+        private bool _isShieldActive = false;
+        public bool IsShieldActive => _isShieldActive;
 
         private void Start()
         {
@@ -29,12 +30,12 @@ namespace SpaceDodger
         private IEnumerator ActivateShield()
         {
             shield.SetActive(true);
-            IsShieldActive = true;
+            _isShieldActive = true;
 
             yield return new WaitForSeconds(_shieldActivationDuration);
 
             shield.SetActive(false);
-            IsShieldActive = false;            
+            _isShieldActive = false;            
         }
     }
 }

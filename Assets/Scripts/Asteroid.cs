@@ -11,7 +11,7 @@ namespace SpaceDodger
 
             if (other.CompareTag("Player") && !shieldActivator.IsShieldActive)
             {
-                playerHealth.ProcessCrash();
+                playerHealth.ReduceHealth();
             } 
             else if (other.CompareTag("Player") && shieldActivator.IsShieldActive)
             {

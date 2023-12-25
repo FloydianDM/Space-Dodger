@@ -1,19 +1,16 @@
-using System;
 using UnityEngine;
 
 namespace SpaceDodger
 {
-    public abstract class PowerUps : MonoBehaviour, ICollectable
+    public abstract class PowerUp : MonoBehaviour, ICollectable
     { 
-        public event Action OnPickupPicked;
-        
         private void OnTriggerEnter(Collider other)
         {
             if (!other.CompareTag("Player"))
             {
                 return;
             }
-            
+
             PlayEffects();    
             SendPickedUpText();
             ExecutePowerUpAction();
