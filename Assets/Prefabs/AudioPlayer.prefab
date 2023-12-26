@@ -144,3 +144,4 @@ MonoBehaviour:
   deathSFX: {fileID: 8300000, guid: 46f26ebd05ae8469980dd450a026276e, type: 3}
   powerUpSFX: {fileID: 8300000, guid: 4ac1f93b948cd4f51b4e8c80ebfcbc3c, type: 3}
   killSFX: {fileID: 8300000, guid: 606cb6d9e7db84471a14254f95c9be57, type: 3}
+  loseHealthSFX: {fileID: 8300000, guid: 59690f68de2f24a57b7c8890e6b574fb, type: 3}

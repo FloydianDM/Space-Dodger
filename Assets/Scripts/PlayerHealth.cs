@@ -5,19 +5,20 @@ namespace SpaceDodger
 {
     public class PlayerHealth : MonoBehaviour
     {
-        public int Health { get; private set; }
         private int _initialHealth = 1;
+        private int _health = 1;
+        public int Health => _health;
 
         private GameManager _gameManager;
+        private AudioPlayer _audioPlayer;
         public event Action OnHealthChange;
                 
         private void Start()
         {
-            Health = _initialHealth;
-
             _gameManager = FindObjectOfType<GameManager>();
+            _audioPlayer = FindObjectOfType<AudioPlayer>();
+
             _gameManager.OnGameStarted += ResetHealth;   
-            
         }
 
         private void Update()
@@ -34,7 +35,7 @@ namespace SpaceDodger
 
         private void ResetHealth()
         {
-            Health = _initialHealth;
+            _health = _initialHealth;
 
             if (OnHealthChange != null)
             {
@@ -44,7 +45,7 @@ namespace SpaceDodger
 
         private void AddHealth()
         {
-            Health ++;
+            _health ++;
 
             if (OnHealthChange != null)
             {
@@ -54,13 +55,15 @@ namespace SpaceDodger
 
         public void ReduceHealth()
         {
-            if (Health <= 1)
+            if (_health <= 1)
             {
                 ProcessDeath();
             }
             else
             {
-                Health --;
+                _audioPlayer.PlayLoseHealthSFX();
+
+                _health --;
 
                 if (OnHealthChange != null)
                 {
@@ -71,8 +74,7 @@ namespace SpaceDodger
 
         private void ProcessDeath()
         {
-            AudioPlayer audioPlayer = FindObjectOfType<AudioPlayer>();
-            audioPlayer.PlayDeathSFX();
+            _audioPlayer.PlayDeathSFX();
 
             AsteroidSpawner asteroidSpawner = FindObjectOfType<AsteroidSpawner>();
             asteroidSpawner.enabled = false;
@@ -85,6 +87,8 @@ namespace SpaceDodger
 
             ScoreManager scoreManager = FindObjectOfType<ScoreManager>();
             scoreManager.IsScoreStopped = true;
+
+            ResetHealth();
 
             gameObject.SetActive(false);
         }
