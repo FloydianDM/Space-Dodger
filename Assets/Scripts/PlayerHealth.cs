@@ -4,21 +4,18 @@ using UnityEngine;
 namespace SpaceDodger
 {
     public class PlayerHealth : MonoBehaviour
-    {
-        private int _initialHealth = 1;
+    {   
+        // for future difficulty settings configurations, add SetHealth() method.
         private int _health = 1;
         public int Health => _health;
-
-        private GameManager _gameManager;
         private AudioPlayer _audioPlayer;
+        private ParticleManager _particleManager;
         public event Action OnHealthChange;
                 
         private void Start()
         {
-            _gameManager = FindObjectOfType<GameManager>();
             _audioPlayer = FindObjectOfType<AudioPlayer>();
-
-            _gameManager.OnGameStarted += ResetHealth;   
+            _particleManager = FindObjectOfType<ParticleManager>();
         }
 
         private void Update()
@@ -32,17 +29,7 @@ namespace SpaceDodger
                 healthPowerUp.DestroyCollectible();
             }
         }
-
-        private void ResetHealth()
-        {
-            _health = _initialHealth;
-
-            if (OnHealthChange != null)
-            {
-                OnHealthChange();
-            }
-        }
-
+        
         private void AddHealth()
         {
             _health ++;
@@ -62,6 +49,7 @@ namespace SpaceDodger
             else
             {
                 _audioPlayer.PlayLoseHealthSFX();
+                _particleManager.PlayCrashVFX();
 
                 _health --;
 
@@ -82,17 +70,13 @@ namespace SpaceDodger
             PowerUpSpawner powerUpSpawner = FindObjectOfType<PowerUpSpawner>();
             powerUpSpawner.enabled = false;
             
-            UIController uIController = FindObjectOfType<UIController>();
-            uIController.EnableGameOverCanvas();
+            UIController uiController = FindObjectOfType<UIController>();
+            uiController.EnableGameOverCanvas();
 
             ScoreManager scoreManager = FindObjectOfType<ScoreManager>();
             scoreManager.IsScoreStopped = true;
-
-            ResetHealth();
 
             gameObject.SetActive(false);
         }
     }
 }
-
-

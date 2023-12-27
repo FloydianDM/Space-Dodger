@@ -27,6 +27,9 @@ namespace SpaceDodger
         {
             AudioPlayer audioPlayer = FindObjectOfType<AudioPlayer>();
             audioPlayer.PlayKillSFX();
+            
+            ParticleManager particleManager = FindObjectOfType<ParticleManager>();
+            particleManager.PlayKillVFX();
 
             Destroy(gameObject);
         }

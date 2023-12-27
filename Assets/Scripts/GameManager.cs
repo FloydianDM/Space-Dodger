@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -10,16 +9,9 @@ namespace SpaceDodger
         [SerializeField] private GameObject player;
         [SerializeField] private Button continueButton;
 
-        public event Action OnGameStarted;
-
         public void StartGame()
         {
             SceneManager.LoadScene(1);
-            
-            if (OnGameStarted != null)
-            {
-                OnGameStarted();
-            }
         }
 
         public void InteractContinueButton()

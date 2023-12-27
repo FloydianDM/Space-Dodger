@@ -27,6 +27,9 @@ namespace SpaceDodger
         {
             AudioPlayer audioPlayer = FindObjectOfType<AudioPlayer>();
             audioPlayer.PlayPowerUpSFX();
+            
+            ParticleManager particleManager = FindObjectOfType<ParticleManager>();
+            particleManager.PlayPowerUpVFX();
         }
     
         protected abstract void ExecutePowerUpAction();
