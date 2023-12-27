@@ -486,6 +486,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &580991940 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5375408720243957406, guid: d883617e396224f50888a4eb27dcc34e,
+    type: 3}
+  m_PrefabInstance: {fileID: 8812519659714280554}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &736533206 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4000248789689900632, guid: d883617e396224f50888a4eb27dcc34e,
+    type: 3}
+  m_PrefabInstance: {fileID: 8812519659714280554}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -894,6 +906,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4811525329223842405, guid: e8956f0f00d4740e9885d6b184ce17ae,
         type: 3}
+      propertyPath: killVFXGameObject
+      value: 
+      objectReference: {fileID: 580991940}
+    - target: {fileID: 4811525329223842405, guid: e8956f0f00d4740e9885d6b184ce17ae,
+        type: 3}
       propertyPath: crashVFXGameObject
       value: 
       objectReference: {fileID: 8812519659714280557}
@@ -902,6 +919,11 @@ PrefabInstance:
       propertyPath: deathVFXGameObject
       value: 
       objectReference: {fileID: 8812519659714280557}
+    - target: {fileID: 4811525329223842405, guid: e8956f0f00d4740e9885d6b184ce17ae,
+        type: 3}
+      propertyPath: powerUpVFXGameObject
+      value: 
+      objectReference: {fileID: 736533206}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1653,16 +1675,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 237863873594398433, guid: d883617e396224f50888a4eb27dcc34e,
-        type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 237863873594398436, guid: d883617e396224f50888a4eb27dcc34e,
-        type: 3}
-      propertyPath: m_Name
-      value: CrashVFX
-      objectReference: {fileID: 0}
     - target: {fileID: 2227850888551422991, guid: d883617e396224f50888a4eb27dcc34e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1718,14 +1730,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8745155900493317924, guid: d883617e396224f50888a4eb27dcc34e,
-        type: 3}
-      propertyPath: lengthInSec
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 8745155900493318107, guid: d883617e396224f50888a4eb27dcc34e, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d883617e396224f50888a4eb27dcc34e, type: 3}
